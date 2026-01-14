@@ -1,0 +1,591 @@
+/* RESETS E VARIÁVEIS */
+:root {
+    /* NOVAS CORES VERDE CLEAN */
+    --primary-green: #005f56;    /* Verde profundo profissional (substitui o azul) */
+    --accent-green: #2add8c;     /* Verde menta vibrante (substitui o dourado) */
+    
+    --text-color: #333;
+    --light-bg: #f4f7f6;         /* Um cinza levemente esverdeado para o fundo */
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+/* HEADER (Agora com transparência verde) */
+header {
+    /* Usando o RGB do novo verde profundo (0, 95, 86) com transparência */
+    background-color: rgba(0, 95, 86, 0.6);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    /* Mude de 'space-between' para 'flex-start' ou remova essa linha se preferir */
+    justify-content: flex-start; 
+}
+
+/* ADICIONE ISSO PARA O MENU FICAR NO CENTRO */
+nav {
+    /* O 'margin-left: auto' e 'margin-right: auto' funcionam como uma mola
+       que empurra o menu para o centro exato do espaço disponível */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Garante que o menu mobile (hambúrguer) fique na ponta direita no celular */
+.mobile-menu-icon {
+    margin-left: 0; /* No desktop ele fica quieto */
+}
+
+@media (max-width: 768px) {
+    /* No celular, empurramos o ícone para a ponta direita */
+    .mobile-menu-icon {
+        margin-left: auto; 
+    }
+}
+
+.logo img {
+    height: 50px;
+    /* DICA: Se o seu logo tiver azul, você precisará de uma versão branca dele */
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: var(--white);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: var(--accent-green);
+}
+
+.btn-cliente {
+    background-color: var(--accent-green);
+    color: var(--primary-green); /* Texto verde escuro no botão claro */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.btn-cliente:hover {
+    background-color: #23b573; /* Um pouco mais escuro ao passar o mouse */
+    color: var(--white);
+}
+
+.mobile-menu-icon {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero {
+    background: url('assets/hero.webp') no-repeat center center/cover;
+    height: 85vh; /* Um pouco mais alto */
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: var(--white);
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Overlay gradiente verde para um visual mais moderno */
+    background: linear-gradient(135deg, rgba(0, 95, 86, 0.9) 0%, rgba(0, 50, 40, 0.8) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    margin-top: 60px; /* Compensar o menu fixo */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* BOTÕES GERAIS */
+.btn-cta {
+    display: inline-block;
+    background-color: var(--accent-green);
+    color: var(--primary-green);
+    padding: 15px 40px;
+    border-radius: 50px; /* Botões mais arredondados para o visual clean */
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(42, 221, 140, 0.3);
+}
+
+.btn-cta:hover {
+    background-color: #23b573;
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-cta.small {
+    padding: 12px 30px;
+    font-size: 14px;
+}
+
+/* SEÇÃO SOBRE */
+.sobre {
+    display: flex;
+    align-items: center;
+    padding: 100px 20px;
+    gap: 60px;
+    background-color: var(--white);
+}
+
+.sobre-text {
+    flex: 1;
+}
+
+.sobre-text h2 {
+    font-size: 36px;
+    color: var(--primary-green);
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Pequeno detalhe abaixo dos títulos */
+.sobre-text h2::after, .servicos h2::after, .vantagens h2::after, .segmentos-content h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-green);
+    margin-top: 10px;
+}
+
+.servicos h2::after, .vantagens h2::after, .segmentos-content h2::after {
+    margin: 15px auto 0; /* Centralizar o detalhe nos títulos centralizados */
+}
+
+
+.check-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start; /* Alinhar ícone ao topo se o texto quebrar */
+    gap: 12px;
+    font-weight: 500;
+}
+
+.check-list li i {
+    color: var(--accent-green); /* Ícones de check no verde vibrante */
+    font-size: 20px;
+    margin-top: 3px;
+}
+
+.cta-text {
+    margin: 30px 0;
+    font-weight: 500;
+    color: var(--primary-green);
+}
+
+.sobre-img {
+    flex: 1;
+}
+
+.sobre-img img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 95, 86, 0.15);
+}
+
+/* SEÇÃO SERVIÇOS (CARDS) */
+.servicos {
+    padding: 100px 0;
+    background-color: var(--light-bg);
+}
+
+.servicos h2 {
+    text-align: center;
+    font-size: 36px;
+    color: var(--primary-green);
+    margin-bottom: 60px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--white); /* Fundo branco para visual clean */
+    color: var(--text-color);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: left; /* Alinhamento à esquerda fica mais moderno */
+    border-top: 4px solid var(--accent-green); /* Detalhe no topo */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 95, 86, 0.1);
+    background-color: var(--primary-green); /* Fica verde ao passar o mouse */
+    color: var(--white);
+}
+
+.card .icon {
+    font-size: 45px;
+    color: var(--primary-green);
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+
+.card:hover .icon {
+    color: var(--accent-green); /* Ícone fica claro ao passar o mouse */
+}
+
+.card h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.card:hover h3 {
+    color: var(--white);
+}
+
+.card p {
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+/* VANTAGENS */
+.vantagens {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.vantagens h2 {
+    font-size: 36px;
+    color: var(--primary-green);
+    margin-bottom: 60px;
+}
+
+.vantagens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.v-item {
+    padding: 20px;
+}
+
+.v-item i {
+    font-size: 45px;
+    color: var(--accent-green); /* Ícone verde vibrante */
+    margin-bottom: 20px;
+}
+
+.v-item h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: var(--primary-green);
+}
+
+/* --- SEÇÃO SEGMENTOS (VERSÃO VERDE CLEAN + HOVER AMARELO) --- */
+/* --- SEÇÃO SEGMENTOS (Versão Compacta com Espaço Branco) --- */
+
+.segmentos {
+    /* Sua imagem de fundo */
+    background: url('assets/escritorio.jpg') no-repeat center center/cover;
+    position: relative;
+    
+    /* 1. PADDING REDUZIDO: 
+       Diminuímos de 120px para 50px/70px. 
+       Isso deixa a área verde muito mais "fina" e compacta. */
+    padding: 50px 20px 70px 20px; 
+
+    color: #ffffff;
+    overflow: hidden;
+
+    /* 2. CURVA SUAVE (Igual da imagem):
+       Usamos 50% na largura e 60px na altura da curva.
+       Isso cria aquele arco suave sem deformar muito. */
+    border-bottom-left-radius: 50% 250px;
+    border-bottom-right-radius: 50% 250px;
+
+    /* 3. ESPAÇO BRANCO EMBAIXO:
+       Isso empurra o rodapé para baixo, revelando o fundo branco do site
+       e destacando o formato da curva. */
+    margin-bottom: 60px; 
+}
+
+/* Fundo Verde Transparente (Mantido) */
+.segmentos .overlay-blue {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 90, 80, 0.92); /* Verde levemente mais sólido */
+}
+
+/* Conteúdo (Mantido) */
+.segmentos-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.segmentos-content h2 {
+    font-size: 26px; /* Fonte levemente menor para acompanhar o design compacto */
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Lista e Ícones (Mantido o efeito hover amarelo) */
+.segmentos-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 40px auto;
+    display: inline-block;
+    text-align: left;
+}
+
+.segmentos-list li {
+    margin-bottom: 12px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+}
+
+.segmentos-list li i {
+    color: #2add8c;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.segmentos-list li i:hover {
+    color: #fff68f; /* Amarelo clarinho no hover */
+    transform: scale(1.2);
+}
+
+/* Botões */
+.segmentos-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.segmentos-buttons a {
+    text-decoration: none;
+    padding: 12px 30px; /* Botões levemente mais compactos */
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 250px;
+    transition: transform 0.2s ease;
+}
+
+.segmentos-buttons a:hover {
+    transform: translateY(-3px);
+}
+
+.btn-cta {
+    background-color: #fbc02d;
+    color: #0a233c;
+}
+
+.btn-white {
+    background-color: #ffffff;
+    color: #0a233c;
+}
+
+/* FOOTER */
+footer {
+    background-color: #003d37; /* Verde muito escuro para o rodapé */
+    color: #c0d4d1; /* Texto claro levemente esverdeado */
+    padding-top: 80px;
+    font-size: 15px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-col h4 {
+    color: var(--white);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #c0d4d1;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent-green);
+    padding-left: 5px; /* Pequeno movimento ao passar o mouse */
+}
+
+.socials a {
+    color: var(--white);
+    background-color: rgba(255,255,255,0.1);
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    background-color: var(--accent-green);
+    color: var(--primary-green);
+}
+
+.footer-bottom {
+    background-color: #002e29; /* Verde ainda mais escuro para a barra final */
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--accent-green); /* Usando o verde vibrante */
+    color: var(--primary-green);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    box-shadow: 0 5px 20px rgba(42, 221, 140, 0.4);
+    z-index: 2000;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+/* RESPONSIVIDADE (MOBILE) */
+@media (max-width: 768px) {
+    .header-content nav {
+        display: none;
+    }
+    
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .hero-content {
+         margin-top: 80px;
+    }
+
+    .sobre {
+        flex-direction: column;
+        padding: 60px 20px;
+    }
+
+    .segmentos-list {
+        grid-template-columns: 1fr; /* Volta para 1 coluna no mobile */
+    }
+    
+    .cta-buttons {
+         flex-direction: column;
+    }
+    
+    .btn-cta, .btn-white {
+        width: 100%;
+        text-align: center;
+    }
+}
