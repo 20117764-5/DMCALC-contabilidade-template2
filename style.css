@@ -197,6 +197,7 @@ nav ul li a:hover {
     position: relative;
 }
 
+/* Traço verde abaixo dos títulos */
 .sobre-text h2::after, .servicos h2::after, .vantagens h2::after, .segmentos-content h2::after, .feedbacks h2::after {
     content: '';
     display: block;
@@ -206,6 +207,7 @@ nav ul li a:hover {
     margin-top: 10px;
 }
 
+/* Centraliza o traço nos títulos que já são centralizados */
 .servicos h2::after, .vantagens h2::after, .segmentos-content h2::after, .feedbacks h2::after {
     margin: 15px auto 0;
 }
@@ -379,8 +381,8 @@ nav ul li a:hover {
     list-style: none;
     padding: 0;
     margin: 0 auto 40px auto;
-    display: inline-block; /* Altera para inline-block para centralizar o bloco todo */
-    text-align: left;      /* IMPORTANTE: Mantém o texto alinhado à esquerda dentro do bloco */
+    display: inline-block;
+    text-align: left;
 }
 
 .segmentos-list li {
@@ -446,7 +448,7 @@ nav ul li a:hover {
 .feedbacks {
     padding: 80px 0;
     background-color: var(--light-bg);
-    overflow: hidden; /* Esconde o que sai da tela */
+    overflow: hidden;
 }
 
 .feedbacks h2 {
@@ -456,7 +458,6 @@ nav ul li a:hover {
     margin-bottom: 60px;
 }
 
-/* Container do Slider */
 .slider {
     margin: auto;
     width: 100%;
@@ -464,17 +465,14 @@ nav ul li a:hover {
     overflow: hidden;
 }
 
-/* Faixa que se move */
 .slide-track {
     display: flex;
-    /* Calcula a largura total: 300px (tamanho do card + margem) * número de slides (8) */
     width: calc(300px * 8); 
-    animation: scroll 30s linear infinite; /* Animação infinita suave */
+    animation: scroll 30s linear infinite; 
 }
 
-/* Card Individual */
 .slide {
-    width: 300px; /* Largura de cada card */
+    width: 300px;
     padding: 0 15px;
 }
 
@@ -484,7 +482,7 @@ nav ul li a:hover {
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     text-align: center;
-    height: 100%; /* Mesma altura */
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -492,7 +490,7 @@ nav ul li a:hover {
 }
 
 .feedback-card .stars {
-    color: #fbc02d; /* Amarelo Estrela */
+    color: #fbc02d;
     margin-bottom: 15px;
     font-size: 14px;
 }
@@ -509,12 +507,10 @@ nav ul li a:hover {
     font-weight: 700;
 }
 
-/* Animação Keyframes */
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-300px * 4)); } /* Move metade da pista (os 4 cards originais) */
+    100% { transform: translateX(calc(-300px * 4)); }
 }
-
 
 /* FOOTER */
 footer {
@@ -637,7 +633,7 @@ footer {
     color: white;
 }
 
-/* RESPONSIVIDADE (MOBILE) */
+/* --- RESPONSIVIDADE (MOBILE) --- */
 @media (max-width: 768px) {
     .header-content nav {
         display: none;
@@ -656,25 +652,41 @@ footer {
          margin-top: 80px;
     }
 
+    /* Ajustes da Seção Sobre */
     .sobre {
         flex-direction: column;
         padding: 50px 20px;
         gap: 30px;
     }
 
+    /* AQUI ESTÁ A ALTERAÇÃO: Centraliza Título e Botão na Seção Sobre */
+    .sobre-text {
+        text-align: center; 
+    }
+
+    .sobre-text h2::after {
+        margin: 10px auto; /* Centraliza o tracinho verde */
+    }
+
+    /* Mantém a lista alinhada à esquerda para não ficar bagunçada */
+    .check-list {
+        text-align: left;
+        display: inline-block; /* Opcional: faz a lista ficar compacta */
+    }
+
     .sobre-img {
         order: -1; 
     }
 
-    /* CORREÇÃO DO ALINHAMENTO DA LISTA (SEGMENTOS) */
+    /* Ajustes dos Segmentos */
     .segmentos-list {
-        display: inline-block; /* Centraliza o bloco, mas... */
-        text-align: left;      /* ...mantém os itens alinhados à esquerda */
+        display: inline-block; 
+        text-align: left;      
         width: auto;
     }
 
     .segmentos-list li {
-        justify-content: flex-start; /* Força início na esquerda */
+        justify-content: flex-start; 
     }
 
     .segmentos-buttons {
