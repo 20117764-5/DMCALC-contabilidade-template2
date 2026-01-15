@@ -505,6 +505,43 @@ footer {
     padding-left: 5px; /* Pequeno movimento ao passar o mouse */
 }
 
+/* Ajuste para o ícone de endereço no footer */
+.footer-col i.fa-map-marker-alt {
+    color: var(--accent-green);
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.footer-col .address-container p {
+    font-size: 14px;
+    color: #c0d4d1; /* Mesma cor suave dos outros textos do footer */
+}
+
+.address-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #c0d4d1; /* Cor suave do rodapé */
+    font-size: 14px;
+    line-height: 1.5;
+    transition: 0.3s ease;
+}
+
+.address-link i {
+    color: var(--accent-green); /* Ícone no verde vibrante */
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+.address-link:hover {
+    color: var(--white); /* Brilha levemente ao passar o mouse */
+    transform: translateX(5px); /* Pequeno movimento lateral */
+}
+
+.address-link span {
+    display: block;
+}
+
 .socials a {
     color: var(--white);
     background-color: rgba(255,255,255,0.1);
