@@ -177,15 +177,6 @@ nav ul li a:hover {
     font-size: 14px;
 }
 
-/* Média Query para Celulares (telas até 768px) */
-@media (max-width: 768px) {
-    /* É importante usar .sobre-text antes para não afetar outros botões do site */
-    .sobre-text .btn-cta {
-        display: table; /* Transforma em bloco, mas ajustado ao conteúdo */
-        margin: 20px auto 0 auto; /* 20px topo, Auto laterais (centraliza), 0 base */
-    }
-}
-
 /* SEÇÃO SOBRE */
 .sobre {
     display: flex;
@@ -206,7 +197,7 @@ nav ul li a:hover {
     position: relative;
 }
 
-.sobre-text h2::after, .servicos h2::after, .vantagens h2::after, .segmentos-content h2::after {
+.sobre-text h2::after, .servicos h2::after, .vantagens h2::after, .segmentos-content h2::after, .feedbacks h2::after {
     content: '';
     display: block;
     width: 60px;
@@ -215,7 +206,7 @@ nav ul li a:hover {
     margin-top: 10px;
 }
 
-.servicos h2::after, .vantagens h2::after, .segmentos-content h2::after {
+.servicos h2::after, .vantagens h2::after, .segmentos-content h2::after, .feedbacks h2::after {
     margin: 15px auto 0;
 }
 
@@ -388,8 +379,8 @@ nav ul li a:hover {
     list-style: none;
     padding: 0;
     margin: 0 auto 40px auto;
-    display: inline-block;
-    text-align: left;
+    display: inline-block; /* Altera para inline-block para centralizar o bloco todo */
+    text-align: left;      /* IMPORTANTE: Mantém o texto alinhado à esquerda dentro do bloco */
 }
 
 .segmentos-list li {
@@ -450,6 +441,80 @@ nav ul li a:hover {
     background-color: #ffffff; 
     color: #0a233c;
 }
+
+/* --- SEÇÃO DE FEEDBACKS (CARROSSEL CSS) --- */
+.feedbacks {
+    padding: 80px 0;
+    background-color: var(--light-bg);
+    overflow: hidden; /* Esconde o que sai da tela */
+}
+
+.feedbacks h2 {
+    text-align: center;
+    font-size: 36px;
+    color: var(--primary-green);
+    margin-bottom: 60px;
+}
+
+/* Container do Slider */
+.slider {
+    margin: auto;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Faixa que se move */
+.slide-track {
+    display: flex;
+    /* Calcula a largura total: 300px (tamanho do card + margem) * número de slides (8) */
+    width: calc(300px * 8); 
+    animation: scroll 30s linear infinite; /* Animação infinita suave */
+}
+
+/* Card Individual */
+.slide {
+    width: 300px; /* Largura de cada card */
+    padding: 0 15px;
+}
+
+.feedback-card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+    height: 100%; /* Mesma altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedback-card .stars {
+    color: #fbc02d; /* Amarelo Estrela */
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.feedback-card p {
+    font-size: 15px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.feedback-card h4 {
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+/* Animação Keyframes */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-300px * 4)); } /* Move metade da pista (os 4 cards originais) */
+}
+
 
 /* FOOTER */
 footer {
@@ -584,7 +649,7 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 32px; /* Reduzido para mobile */
+        font-size: 32px; 
     }
     
     .hero-content {
@@ -598,19 +663,20 @@ footer {
     }
 
     .sobre-img {
-        order: -1; /* Imagem aparece antes do texto no mobile */
+        order: -1; 
     }
 
+    /* CORREÇÃO DO ALINHAMENTO DA LISTA (SEGMENTOS) */
     .segmentos-list {
-        display: block;
-        text-align: center;
+        display: inline-block; /* Centraliza o bloco, mas... */
+        text-align: left;      /* ...mantém os itens alinhados à esquerda */
+        width: auto;
     }
 
     .segmentos-list li {
-        justify-content: center;
+        justify-content: flex-start; /* Força início na esquerda */
     }
 
-    /* --- BOTÕES EMPILHADOS E MENORES NO MOBILE --- */
     .segmentos-buttons {
         flex-direction: column;
         align-items: center;
@@ -618,10 +684,10 @@ footer {
     }
     
     .segmentos-buttons a {
-        width: 260px !important; /* Tamanho fixo menor e centralizado */
+        width: 260px !important;
         min-width: unset !important;
-        height: 45px !important;  /* Altura menor */
-        font-size: 13px !important; /* Fonte menor */
+        height: 45px !important;  
+        font-size: 13px !important; 
         padding: 10px !important;
     }
 }

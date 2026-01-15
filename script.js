@@ -9,13 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.style.display = 'none';
         } else {
             nav.style.display = 'block';
-            nav.style.backgroundColor = '#0e2a47';
+            // Atualizei para verde escuro com transparência
+            nav.style.backgroundColor = 'rgba(0, 95, 86, 0.95)'; 
             nav.style.position = 'absolute';
             nav.style.top = '70px';
             nav.style.left = '0';
             nav.style.width = '100%';
             nav.style.padding = '20px';
             nav.style.textAlign = 'center';
+            nav.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
         }
     });
 
@@ -28,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 target.scrollIntoView({
                     behavior: 'smooth'
                 });
+                
+                // Fecha o menu mobile se estiver aberto ao clicar
+                if (window.innerWidth <= 768) {
+                    nav.style.display = 'none';
+                }
             }
         });
     });
