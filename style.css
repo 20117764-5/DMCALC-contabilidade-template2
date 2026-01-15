@@ -177,6 +177,15 @@ nav ul li a:hover {
     font-size: 14px;
 }
 
+/* Média Query para Celulares (telas até 768px) */
+@media (max-width: 768px) {
+    /* É importante usar .sobre-text antes para não afetar outros botões do site */
+    .sobre-text .btn-cta {
+        display: table; /* Transforma em bloco, mas ajustado ao conteúdo */
+        margin: 20px auto 0 auto; /* 20px topo, Auto laterais (centraliza), 0 base */
+    }
+}
+
 /* SEÇÃO SOBRE */
 .sobre {
     display: flex;
