@@ -1,11 +1,11 @@
 /* RESETS E VARIÁVEIS */
 :root {
     /* NOVAS CORES VERDE CLEAN */
-    --primary-green: #005f56;    /* Verde profundo profissional (substitui o azul) */
-    --accent-green: #2add8c;     /* Verde menta vibrante (substitui o dourado) */
+    --primary-green: #005f56;    /* Verde profundo profissional */
+    --accent-green: #2add8c;     /* Verde menta vibrante */
     
     --text-color: #333;
-    --light-bg: #f4f7f6;         /* Um cinza levemente esverdeado para o fundo */
+    --light-bg: #f4f7f6;         /* Cinza esverdeado leve */
     --white: #ffffff;
 }
 
@@ -37,9 +37,8 @@ ul {
     list-style: none;
 }
 
-/* HEADER (Agora com transparência verde) */
+/* HEADER */
 header {
-    /* Usando o RGB do novo verde profundo (0, 95, 86) com transparência */
     background-color: rgba(0, 95, 86, 0.6);
     padding: 15px 0;
     position: fixed;
@@ -55,25 +54,19 @@ header {
 .header-content {
     display: flex;
     align-items: center;
-    /* Mude de 'space-between' para 'flex-start' ou remova essa linha se preferir */
     justify-content: flex-start; 
 }
 
-/* ADICIONE ISSO PARA O MENU FICAR NO CENTRO */
 nav {
-    /* O 'margin-left: auto' e 'margin-right: auto' funcionam como uma mola
-       que empurra o menu para o centro exato do espaço disponível */
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Garante que o menu mobile (hambúrguer) fique na ponta direita no celular */
 .mobile-menu-icon {
-    margin-left: 0; /* No desktop ele fica quieto */
+    margin-left: 0;
 }
 
 @media (max-width: 768px) {
-    /* No celular, empurramos o ícone para a ponta direita */
     .mobile-menu-icon {
         margin-left: auto; 
     }
@@ -81,7 +74,6 @@ nav {
 
 .logo img {
     height: 50px;
-    /* DICA: Se o seu logo tiver azul, você precisará de uma versão branca dele */
 }
 
 nav ul {
@@ -102,7 +94,7 @@ nav ul li a:hover {
 
 .btn-cliente {
     background-color: var(--accent-green);
-    color: var(--primary-green); /* Texto verde escuro no botão claro */
+    color: var(--primary-green);
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
@@ -111,7 +103,7 @@ nav ul li a:hover {
 }
 
 .btn-cliente:hover {
-    background-color: #23b573; /* Um pouco mais escuro ao passar o mouse */
+    background-color: #23b573;
     color: var(--white);
 }
 
@@ -125,7 +117,7 @@ nav ul li a:hover {
 /* HERO SECTION */
 .hero {
     background: url('assets/hero2.png') no-repeat center center/cover;
-    height: 85vh; /* Um pouco mais alto */
+    height: 85vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -138,7 +130,6 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Overlay gradiente verde para um visual mais moderno */
     background: linear-gradient(135deg, rgba(0, 95, 86, 0.9) 0%, rgba(0, 50, 40, 0.8) 100%);
 }
 
@@ -147,7 +138,7 @@ nav ul li a:hover {
     z-index: 1;
     text-align: center;
     max-width: 800px;
-    margin-top: 60px; /* Compensar o menu fixo */
+    margin-top: 60px;
 }
 
 .hero-content h1 {
@@ -168,7 +159,7 @@ nav ul li a:hover {
     background-color: var(--accent-green);
     color: var(--primary-green);
     padding: 15px 40px;
-    border-radius: 50px; /* Botões mais arredondados para o visual clean */
+    border-radius: 50px;
     font-weight: bold;
     text-transform: uppercase;
     transition: 0.3s;
@@ -206,7 +197,6 @@ nav ul li a:hover {
     position: relative;
 }
 
-/* Pequeno detalhe abaixo dos títulos */
 .sobre-text h2::after, .servicos h2::after, .vantagens h2::after, .segmentos-content h2::after {
     content: '';
     display: block;
@@ -217,20 +207,19 @@ nav ul li a:hover {
 }
 
 .servicos h2::after, .vantagens h2::after, .segmentos-content h2::after {
-    margin: 15px auto 0; /* Centralizar o detalhe nos títulos centralizados */
+    margin: 15px auto 0;
 }
-
 
 .check-list li {
     margin-bottom: 12px;
     display: flex;
-    align-items: flex-start; /* Alinhar ícone ao topo se o texto quebrar */
+    align-items: flex-start;
     gap: 12px;
     font-weight: 500;
 }
 
 .check-list li i {
-    color: var(--accent-green); /* Ícones de check no verde vibrante */
+    color: var(--accent-green);
     font-size: 20px;
     margin-top: 3px;
 }
@@ -251,7 +240,7 @@ nav ul li a:hover {
     box-shadow: 0 20px 40px rgba(0, 95, 86, 0.15);
 }
 
-/* SEÇÃO SERVIÇOS (CARDS) */
+/* SERVIÇOS */
 .servicos {
     padding: 100px 0;
     background-color: var(--light-bg);
@@ -271,12 +260,12 @@ nav ul li a:hover {
 }
 
 .card {
-    background-color: var(--white); /* Fundo branco para visual clean */
+    background-color: var(--white);
     color: var(--text-color);
     padding: 40px 30px;
     border-radius: 15px;
-    text-align: left; /* Alinhamento à esquerda fica mais moderno */
-    border-top: 4px solid var(--accent-green); /* Detalhe no topo */
+    text-align: left;
+    border-top: 4px solid var(--accent-green);
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
 }
@@ -284,7 +273,7 @@ nav ul li a:hover {
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 95, 86, 0.1);
-    background-color: var(--primary-green); /* Fica verde ao passar o mouse */
+    background-color: var(--primary-green);
     color: var(--white);
 }
 
@@ -296,7 +285,7 @@ nav ul li a:hover {
 }
 
 .card:hover .icon {
-    color: var(--accent-green); /* Ícone fica claro ao passar o mouse */
+    color: var(--accent-green);
 }
 
 .card h3 {
@@ -340,7 +329,7 @@ nav ul li a:hover {
 
 .v-item i {
     font-size: 45px;
-    color: var(--accent-green); /* Ícone verde vibrante */
+    color: var(--accent-green);
     margin-bottom: 20px;
 }
 
@@ -350,35 +339,18 @@ nav ul li a:hover {
     color: var(--primary-green);
 }
 
-/* --- SEÇÃO SEGMENTOS (VERSÃO VERDE CLEAN + HOVER AMARELO) --- */
-/* --- SEÇÃO SEGMENTOS (Versão Compacta com Espaço Branco) --- */
-
+/* SEGMENTOS */
 .segmentos {
-    /* Sua imagem de fundo */
     background: url('assets/escritorio.jpg') no-repeat center center/cover;
     position: relative;
-    
-    /* 1. PADDING REDUZIDO: 
-       Diminuímos de 120px para 50px/70px. 
-       Isso deixa a área verde muito mais "fina" e compacta. */
     padding: 50px 20px 70px 20px; 
-
     color: #ffffff;
     overflow: hidden;
-
-    /* 2. CURVA SUAVE (Igual da imagem):
-       Usamos 50% na largura e 60px na altura da curva.
-       Isso cria aquele arco suave sem deformar muito. */
     border-bottom-left-radius: 50% 250px;
     border-bottom-right-radius: 50% 250px;
-
-    /* 3. ESPAÇO BRANCO EMBAIXO:
-       Isso empurra o rodapé para baixo, revelando o fundo branco do site
-       e destacando o formato da curva. */
     margin-bottom: 60px; 
 }
 
-/* Fundo Verde Transparente (Mantido) */
 .segmentos .overlay-blue {
     position: absolute;
     top: 0;
@@ -386,10 +358,9 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: rgba(0, 90, 80, 0.92); /* Verde levemente mais sólido */
+    background: rgba(0, 90, 80, 0.92);
 }
 
-/* Conteúdo (Mantido) */
 .segmentos-content {
     position: relative;
     z-index: 2;
@@ -399,12 +370,11 @@ nav ul li a:hover {
 }
 
 .segmentos-content h2 {
-    font-size: 26px; /* Fonte levemente menor para acompanhar o design compacto */
+    font-size: 26px;
     margin-bottom: 30px;
     font-weight: 700;
 }
 
-/* Lista e Ícones (Mantido o efeito hover amarelo) */
 .segmentos-list {
     list-style: none;
     padding: 0;
@@ -429,49 +399,53 @@ nav ul li a:hover {
 }
 
 .segmentos-list li i:hover {
-    color: #fff68f; /* Amarelo clarinho no hover */
+    color: #fff68f;
     transform: scale(1.2);
 }
 
-/* Botões */
+/* --- AJUSTE DOS BOTÕES DE SEGMENTOS --- */
 .segmentos-buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; 
+    justify-content: center;
     align-items: center;
     gap: 15px;
+    flex-wrap: wrap; 
+    margin-top: 30px;
 }
 
 .segmentos-buttons a {
     text-decoration: none;
-    padding: 12px 30px; /* Botões levemente mais compactos */
     border-radius: 5px;
     font-weight: 700;
-    font-size: 15px;
+    transition: transform 0.2s ease, background-color 0.3s;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 250px;
-    transition: transform 0.2s ease;
+    padding: 12px 25px !important; 
+    font-size: 14px !important;    
+    min-width: 240px !important;   
+    height: 50px;                  
 }
 
 .segmentos-buttons a:hover {
     transform: translateY(-3px);
 }
 
-.btn-cta {
-    background-color: #fbc02d;
+.segmentos-buttons .btn-cta {
+    background-color: #fbc02d; 
     color: #0a233c;
 }
 
-.btn-white {
-    background-color: #ffffff;
+.segmentos-buttons .btn-white {
+    background-color: #ffffff; 
     color: #0a233c;
 }
 
 /* FOOTER */
 footer {
-    background-color: #003d37; /* Verde muito escuro para o rodapé */
-    color: #c0d4d1; /* Texto claro levemente esverdeado */
+    background-color: #003d37; 
+    color: #c0d4d1; 
     padding-top: 80px;
     font-size: 15px;
 }
@@ -502,10 +476,9 @@ footer {
 
 .footer-col ul li a:hover {
     color: var(--accent-green);
-    padding-left: 5px; /* Pequeno movimento ao passar o mouse */
+    padding-left: 5px;
 }
 
-/* Ajuste para o ícone de endereço no footer */
 .footer-col i.fa-map-marker-alt {
     color: var(--accent-green);
     margin-right: 8px;
@@ -514,28 +487,28 @@ footer {
 
 .footer-col .address-container p {
     font-size: 14px;
-    color: #c0d4d1; /* Mesma cor suave dos outros textos do footer */
+    color: #c0d4d1;
 }
 
 .address-link {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    color: #c0d4d1; /* Cor suave do rodapé */
+    color: #c0d4d1;
     font-size: 14px;
     line-height: 1.5;
     transition: 0.3s ease;
 }
 
 .address-link i {
-    color: var(--accent-green); /* Ícone no verde vibrante */
+    color: var(--accent-green);
     font-size: 18px;
     margin-top: 3px;
 }
 
 .address-link:hover {
-    color: var(--white); /* Brilha levemente ao passar o mouse */
-    transform: translateX(5px); /* Pequeno movimento lateral */
+    color: var(--white);
+    transform: translateX(5px);
 }
 
 .address-link span {
@@ -561,7 +534,7 @@ footer {
 }
 
 .footer-bottom {
-    background-color: #002e29; /* Verde ainda mais escuro para a barra final */
+    background-color: #002e29;
     text-align: center;
     padding: 25px;
     font-size: 14px;
@@ -571,7 +544,7 @@ footer {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    background-color: var(--accent-green); /* Usando o verde vibrante */
+    background-color: var(--accent-green);
     color: var(--primary-green);
     width: 65px;
     height: 65px;
@@ -598,10 +571,11 @@ footer {
     
     .mobile-menu-icon {
         display: block;
+        margin-left: auto;
     }
 
     .hero-content h1 {
-        font-size: 36px;
+        font-size: 32px; /* Reduzido para mobile */
     }
     
     .hero-content {
@@ -610,19 +584,35 @@ footer {
 
     .sobre {
         flex-direction: column;
-        padding: 60px 20px;
+        padding: 50px 20px;
+        gap: 30px;
+    }
+
+    .sobre-img {
+        order: -1; /* Imagem aparece antes do texto no mobile */
     }
 
     .segmentos-list {
-        grid-template-columns: 1fr; /* Volta para 1 coluna no mobile */
-    }
-    
-    .cta-buttons {
-         flex-direction: column;
-    }
-    
-    .btn-cta, .btn-white {
-        width: 100%;
+        display: block;
         text-align: center;
+    }
+
+    .segmentos-list li {
+        justify-content: center;
+    }
+
+    /* --- BOTÕES EMPILHADOS E MENORES NO MOBILE --- */
+    .segmentos-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .segmentos-buttons a {
+        width: 260px !important; /* Tamanho fixo menor e centralizado */
+        min-width: unset !important;
+        height: 45px !important;  /* Altura menor */
+        font-size: 13px !important; /* Fonte menor */
+        padding: 10px !important;
     }
 }
