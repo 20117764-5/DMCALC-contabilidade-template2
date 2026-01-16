@@ -63,13 +63,11 @@ nav {
 }
 
 .mobile-menu-icon {
+    display: none; /* Escondido por padrão no desktop */
     margin-left: 0;
-}
-
-@media (max-width: 768px) {
-    .mobile-menu-icon {
-        margin-left: auto; 
-    }
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .logo img {
@@ -105,13 +103,6 @@ nav ul li a:hover {
 .btn-cliente:hover {
     background-color: #23b573;
     color: var(--white);
-}
-
-.mobile-menu-icon {
-    display: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
 }
 
 /* HERO SECTION */
@@ -212,18 +203,45 @@ nav ul li a:hover {
     margin: 15px auto 0;
 }
 
+/* Espaço acima da lista */
+.check-list {
+    margin-top: 20px;
+}
+
 .check-list li {
     margin-bottom: 12px;
-    display: flex;
+}
+
+/* Estilo do Link dentro da lista */
+.check-list li a {
+    text-decoration: none;     /* Tira o sublinhado */
+    color: var(--text-color);  /* Mantém a cor cinza original do texto */
+    display: flex;             /* Mantém ícone e texto alinhados */
     align-items: flex-start;
     gap: 12px;
     font-weight: 500;
+    transition: 0.3s;          /* Suaviza a mudança de cor */
+    cursor: pointer;           /* Mostra a mãozinha de clique */
 }
 
-.check-list li i {
-    color: var(--accent-green);
+/* Ícone */
+.check-list li a i {
+    color: var(--accent-green); /* Cor do ícone */
     font-size: 20px;
     margin-top: 3px;
+    transition: 0.3s;
+}
+
+/* Efeito Hover: Quando passar o mouse ou tocar */
+.check-list li a:hover {
+    color: var(--primary-green); /* O texto fica verde escuro */
+    transform: translateX(5px);  /* Move levemente para a direita */
+}
+
+/* O ícone brilha mais ao passar o mouse */
+.check-list li a:hover i {
+    color: #23b573; 
+    transform: scale(1.1);
 }
 
 .cta-text {
@@ -633,23 +651,52 @@ footer {
     color: white;
 }
 
-/* --- RESPONSIVIDADE (MOBILE) --- */
+/* =========================================
+   RESPONSIVIDADE (MOBILE - MENOR QUE 768PX)
+   ========================================= */
 @media (max-width: 768px) {
-    .header-content nav {
-        display: none;
-    }
-    
+    /* 1. Esconde o ícone do menu (Hambúrguer) */
     .mobile-menu-icon {
-        display: block;
-        margin-left: auto;
+        display: none !important; 
     }
 
-    .hero-content h1 {
-        font-size: 32px; 
+    /* 2. Header Layout: Coluna (Logo em cima, Menu embaixo) */
+    .header-content {
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+    /* 3. Força o Menu a aparecer e ajusta o estilo */
+    .header-content nav {
+        display: block !important;
+        width: 100%;
+        margin-top: 10px;
+        background-color: transparent !important; /* Remove fundo que estava no JS */
+        position: static !important; /* Remove posição absoluta do JS */
+        box-shadow: none !important;
+        padding: 0 !important;
+    }
+
+    /* 4. Lista de Links no Mobile */
+    nav ul {
+        display: flex;
+        justify-content: center; /* Centraliza os itens */
+        flex-wrap: wrap;         /* Permite quebra de linha se não couber */
+        gap: 15px;               /* Espaço entre os links */
+    }
+
+    nav ul li a {
+        font-size: 12px;         /* Fonte um pouco menor para caber */
+        white-space: nowrap;     /* Evita quebra de texto no meio da palavra */
+    }
+
+    /* 5. Ajuste de Espaço no Hero (pois o header ficou maior) */
+    .hero-content {
+         margin-top: 140px; 
     }
     
-    .hero-content {
-         margin-top: 80px;
+    .hero-content h1 {
+        font-size: 32px; 
     }
 
     /* Ajustes da Seção Sobre */
@@ -659,19 +706,17 @@ footer {
         gap: 30px;
     }
 
-    /* AQUI ESTÁ A ALTERAÇÃO: Centraliza Título e Botão na Seção Sobre */
     .sobre-text {
         text-align: center; 
     }
 
     .sobre-text h2::after {
-        margin: 10px auto; /* Centraliza o tracinho verde */
+        margin: 10px auto; 
     }
 
-    /* Mantém a lista alinhada à esquerda para não ficar bagunçada */
     .check-list {
         text-align: left;
-        display: inline-block; /* Opcional: faz a lista ficar compacta */
+        display: inline-block; 
     }
 
     .sobre-img {
