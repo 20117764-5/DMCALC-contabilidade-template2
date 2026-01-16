@@ -198,6 +198,8 @@ nav ul li a:hover {
     margin-top: 10px;
 }
 
+
+
 /* Centraliza o traço nos títulos que já são centralizados */
 .servicos h2::after, .vantagens h2::after, .segmentos-content h2::after, .feedbacks h2::after {
     margin: 15px auto 0;
@@ -663,7 +665,7 @@ footer {
     /* 2. Header Layout: Coluna (Logo em cima, Menu embaixo) */
     .header-content {
         flex-direction: column;
-        padding-bottom: 5px; /* Reduzi o padding para economizar altura */
+        padding-bottom: 5px; 
     }
 
     /* 3. Força o Menu a aparecer e ajusta o estilo */
@@ -675,15 +677,11 @@ footer {
         position: static !important;
         box-shadow: none !important;
         padding: 0 !important;
-        
-        /* Permite rolagem lateral invisível se a tela for muito pequena */
         overflow-x: auto; 
         -webkit-overflow-scrolling: touch;
-        /* Esconde a barra de rolagem visualmente */
-        scrollbar-width: none; /* Firefox */
+        scrollbar-width: none; 
     }
     
-    /* Esconde a barra de rolagem no Chrome/Safari */
     .header-content nav::-webkit-scrollbar {
         display: none;
     }
@@ -691,15 +689,14 @@ footer {
     /* 4. Lista de Links no Mobile - LINHA ÚNICA */
     nav ul {
         display: flex;
-        justify-content: center; /* Tenta centralizar */
-        flex-wrap: nowrap;       /* OBRIGA a ficar na mesma linha (não quebra) */
-        gap: 8px;                /* Espaço bem pequeno entre os itens */
-        padding: 0 10px;         /* Margem lateral de segurança */
-        width: max-content;      /* Garante que o container abrace os itens */
-        margin: 0 auto;          /* Centraliza o container */
+        justify-content: center; 
+        flex-wrap: nowrap;       
+        gap: 8px;                
+        padding: 0 10px;         
+        width: max-content;      
+        margin: 0 auto;          
     }
 
-    /* Se a tela for muito estreita, alinha à esquerda para permitir rolagem */
     @media (max-width: 400px) {
         nav ul {
             justify-content: flex-start;
@@ -707,14 +704,14 @@ footer {
     }
 
     nav ul li {
-        flex: 0 0 auto; /* Impede que o item seja esmagado */
+        flex: 0 0 auto; 
     }
 
     nav ul li a {
-        font-size: 10px !important; /* Fonte reduzida para caber tudo */
-        white-space: nowrap;        /* Impede que a palavra quebre */
-        letter-spacing: -0.2px;     /* Aproxima levemente as letras */
-        padding: 5px 0;             /* Aumenta área de toque vertical */
+        font-size: 10px !important; 
+        white-space: nowrap;        
+        letter-spacing: -0.2px;     
+        padding: 5px 0;             
     }
 
     /* 5. Ajuste de Espaço no Hero */
@@ -726,7 +723,7 @@ footer {
         font-size: 32px; 
     }
 
-    /* Ajustes da Seção Sobre */
+    /* --- SEÇÃO SOBRE (Ajustes Mobile) --- */
     .sobre {
         flex-direction: column;
         padding: 50px 20px;
@@ -735,6 +732,15 @@ footer {
 
     .sobre-text {
         text-align: center; 
+    }
+    
+    /* === AQUI ESTÁ A MUDANÇA QUE VOCÊ PEDIU === */
+    /* Diminui a fonte APENAS do primeiro parágrafo no celular */
+    .sobre-text > p:first-of-type {
+        font-size: 14px !important; /* Tamanho reduzido (padrão desktop é maior) */
+        line-height: 1.4;           /* Altura da linha ajustada */
+        margin-bottom: 20px;
+        padding: 0 10px;            /* Um pouquinho de margem lateral para não colar na borda */
     }
 
     .sobre-text h2::after {
