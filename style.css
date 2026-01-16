@@ -1,5 +1,8 @@
 /* RESETS E VARIÁVEIS */
 :root {
+
+    color-scheme: light; /* Força o modo claro mesmo se o celular estiver no modo escuro */
+
     /* NOVAS CORES VERDE CLEAN */
     --primary-green: #005f56;    /* Verde profundo profissional */
     --accent-green: #2add8c;     /* Verde menta vibrante */
